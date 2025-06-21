@@ -1,0 +1,49 @@
+/* clase*/
+/* voy a la etiqueta en html le pongo class y lo nombro */
+/* despues el llamado es . + el nombre */
+
+
+/* ID a diferencia del clase empieza con #  */
+
+ body {
+    background-image: url("/images/brosty-stencil.png");
+    background-color:rgb(248, 248, 241);
+    background-size: contain;
+ }
+
+ /* Elimina los márgenes por defecto del navegador y define la fuente principal */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Estiliza la barra de navegación principal */
+  .navbar {
+    display: flex; /* Usa Flexbox para alinear elementos horizontalmente */
+    justify-content: space-between; /* Deja espacio entre el logo y los enlaces */
+    align-items: center; /* Centra verticalmente los elementos */
+
+  }
+  
+  
+  /* Contenedor de los enlaces del menú de navegación */
+  .nav-links {
+    display: flex; /* Muestra los enlaces uno al lado del otro */
+    gap: 40px; /* Espacio entre cada enlace */
+  }
+  
+  /* Estilo individual de los enlaces */
+  .nav-links a {
+    color: black; /* Color del texto */
+    font-weight: bold; /* Hace el texto más grueso */
+    letter-spacing: 2px; /* Espaciado entre letras para dar un look moderno */
+    transition: color 0.2s; /* Suaviza el cambio de color al pasar el mouse */
+  }
+  
+  /* Cambio de color cuando el usuario pasa el mouse sobre el enlace */
+  .nav-links a:hover {
+    color: #c5d213de; 
+  }
+  
+  
+
