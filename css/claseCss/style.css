@@ -6,7 +6,7 @@
 /* ID a diferencia del clase empieza con #  */
 
  body {
-    background-image: url("/images/brosty-stencil.png");
+    background-image: url("images/brosty-stencil.png");
     background-color:rgb(248, 248, 241);
     background-size: contain;
  }
