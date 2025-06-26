@@ -4,9 +4,11 @@
 
 
 /* ID a diferencia del clase empieza con #  */
-
+*{
+  box-sizing: border-box;
+}
  body {
-    background-image: url("images/brosty-stencil.png");
+    background-image: url("/images/brosty-stencil.png");
     background-color:rgb(248, 248, 241);
     background-size: contain;
  }
@@ -30,6 +32,7 @@ body {
   .nav-links {
     display: flex; /* Muestra los enlaces uno al lado del otro */
     gap: 40px; /* Espacio entre cada enlace */
+    
   }
   
   /* Estilo individual de los enlaces */
@@ -38,12 +41,54 @@ body {
     font-weight: bold; /* Hace el texto más grueso */
     letter-spacing: 2px; /* Espaciado entre letras para dar un look moderno */
     transition: color 0.2s; /* Suaviza el cambio de color al pasar el mouse */
+    text-decoration: none;
+    
   }
+
   
   /* Cambio de color cuando el usuario pasa el mouse sobre el enlace */
   .nav-links a:hover {
     color: #c5d213de; 
+    
   }
+
+  .nav-links a:active{
+    color: green;
+  }
+
+  .formulario {
+    background-color: rgb(203, 199, 199);
+    box-shadow: 10px 10px 10px 10px rgb(142, 142, 142);
+  }
+
+  .caja_logo{
+    box-shadow: 3px 3px 3px 3px black;
+    
+  }
+
+  #Blateral{
+    min-width: 500px;
+    max-height: 650px;
+    overflow: hidden;
+    width: 10%;
+    float: right;
+    overflow-y: scroll;
+    border: 1px solid blue;
+  }
+
+  .libre{
+    position: fixed;
+    top:0px;
+    left: 450px;
+    border: 1px solid black;
+    background-color: red;
+    color: white;
+    width: 80px;
+    height: 80px;
+    font-size: 13px;
+  }
+
+  
   
   
 
