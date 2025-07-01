@@ -24,7 +24,7 @@ body {
     display: flex; /* Usa Flexbox para alinear elementos horizontalmente */
     justify-content: space-between; /* Deja espacio entre el logo y los enlaces */
     align-items: center; /* Centra verticalmente los elementos */
-    
+    background-color: rgb(140, 198, 63);
 
 
   }
