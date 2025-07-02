@@ -137,6 +137,39 @@ body {
   font-weight: 600;
 }
 
+.form-container {
+  background: rgb(201, 196, 196);
+  text-align: center;
+  border-radius: 5%;
+  width: 50%;
+  margin-left: 25%;
+  margin-top:7%;
+  margin-bottom: 0%;
+  box-shadow:10px 10px 10px 10px rgb(143, 137, 137) ;
+ padding: 15px;
+ justify-content: center;
+}
+
+.inicio-sesion{
+  text-align: center;
+  margin-right: 30%;
+}
+
+#iniciatudia{
+  transition: transform 0.3s ease;
+  font-family: monospace;
+  width: 60%;
+  margin-left: 25%
+  
+}
+
+#img-login{
+  margin-left: 80%;
+}
+
+.form-container:hover #img-login{
+  transform: scale(3.1); /* Aumenta el tamaño al 110% al pasar el mouse */
+}
 
 
 

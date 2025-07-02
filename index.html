@@ -1,76 +1,39 @@
-<!DOCTYPE html>
+
+      <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BROSTY  </title>
-    <link rel="stylesheet" href="css/claseCss/style.css">
+    <title>BROSTY <img src="/images/logo-brosty.png" alt="brosty"> </title>
+    <link rel="stylesheet" href="./css/claseCss/style.css">
+    
 </head>
 <body>
-    
-
     <header class="navbar">
         <div class="caja_logo">
-            <img src="images/logo_brosty.png" height="100px" alt="">
-            
-        </div>
-    <section class="welcome-text">
-    <div>
-        <h1>Bienvenido a BROSTY</h1>
-        <p>Gestión inteligente de inventario, logística y personal.</p>   
-    </div>
-    </section>
+            <img src="images/logo_brosty.png" height="200px" alt="">
+        </div> 
         
+        <div class="inicio-sesion">
+            <h1>Bienvenido a BROSTY</h1>
+            <p>Gestión inteligente de inventario, logística y personal.</p>
+        </div> 
     </header>
-
-    <hr><br><br>
-
-
-<div class="contenedor-principal">
-  <div class="tarjeta">
-    <a href="index.html">
-      <img src="images/slider-index.png" alt="Inventario">
-    </a>
-    <h3>Inicio</h3>
-  </div>
-
-  <div class="tarjeta">
-    <a href="logistica.html">
-      <img src="images/slider-logistica.png"  alt="Logística">
-    </a>
-    <h3>Logística</h3>
-  </div>
-
-  <div class="tarjeta">
-    <a href="nomina.html">
-      <img src="images/slider-nomina.png" alt="Nómina">
-    </a>
-    <h3>Nómina</h3>
-  </div>
-
-  <div class="tarjeta">
-    <a href="reportes.html">
-      <img src="images/slider-reportes.png" alt="reportes">
-    </a>
-    <h3>Reportes</h3>
-  </div>
-
-  <div class="tarjeta">
-    <a href="gestion_personal.html">
-      <img src="images/slide-gestion-personal.png" alt="gestion_personal">
-    </a>
-    <h3>Gestión De Personal</h3>
-  </div>
-  <div class="tarjeta">
-    <a href="inventario.html">
-      <img src="images/slider-inventario.png"  alt="inventario">
-    </a>
-    <h3>Inventario</h3>
-  </div>
-</div>
-
-
-
-  
-</body>
-</html>
+    <div class="form-container"><img src="images/logo_brosty.png"  height="80px" id="img-login"><br>
+        <h2 id="iniciatudia">INICIA TU DIA CON BROSTY </h2>
+        <form  onsubmit=" return validarsesion()">
+            <label for="usuario">usuario: </label>
+            <select id="usuario" name="rol">
+                <option value="admin">Administrador</option>
+                <option value="mesero">Mesero</option>
+                <option value="cocinero">Cocinero</option>
+                <option value="domiciliario">Domiciliario</option>
+</select>
+            <label for="contraseña">contraseña: </label>
+            <input type="password" id="contraseña" name="contraseña" required><br><br>
+            <button type="submit">ingresar a Brosty Colombia</button>
+        </form><br>
+    </div>
+    <script src="script.js"></script>
+    </body>
+    </html>
