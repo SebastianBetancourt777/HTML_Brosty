@@ -1,31 +1,111 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BROSTY <img src="/images/logo-brosty.png" alt="brosty"> </title>
-    <link rel="stylesheet" href="./css/claseCss/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel Administrativo · Reportes</title>
+  <!-- Hoja de estilos externa -->
+  <link rel="stylesheet" href="reportes.css" />
 </head>
 <body>
-    <header class="navbar">
-        <div>
-            <img src="images/logo_brosty.png" height="100px" alt="">
-        </div>
-        <nav class="nav-links">
-            <a href="./Index.html">INICIO</a>
-            <a href="./inventario.html">INVENTARIO</a>
-            <a href="./logistica.html">LOGISTICA</a>
-            <a href="./reportes.html">REPORTES</a>
-            <a href="./nomina.html">NOMINA</a>
-            <a href="./gestion_personal.html">GESTION DE PERSONAL</a>  
-        </nav>
-    </header>
+  <!-- ==========  HEADER: LOGO + NAVBAR  ========== -->
+  <header>
+    <img src="images/logo_brosty.png" alt="Logo Brosty" />
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="inventario.html">Inventario</a>
+      <a href="logistica.html">Logística</a>
+      <a href="reportes.html">Reportes</a>
+      <a href="nomina.html">Nómina</a>
+      <a href="personal.html">Gestión de Personal</a>
+    </nav>
+  </header>
 
-    <hr><br><br>
-    
-    <p>Where can I get some?
-        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+  <!-- ==========  MAIN CONTENT  ========== -->
+  <main>
+    <h1>Reportes</h1>
 
-    
+    <!-- ====  FILTROS  ==== -->
+    <form id="filters" class="filter-group">
+      <div>
+        <label for="from">Desde *</label>
+        <input type="date" id="from" name="from" required />
+      </div>
+
+      <div>
+        <label for="to">Hasta *</label>
+        <input type="date" id="to" name="to" required />
+      </div>
+
+      <div>
+        <label for="branch">Sedes</label>
+        <select id="branch" name="branch">
+          <option value="centro">Centro</option>
+          <option value="norte">Norte</option>
+          <option value="sur">Sur</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="transaction">Tipo de Servicio</label>
+        <select id="transaction" name="transaction">
+          <option value="dinein">Pedido en el lugar</option>
+          <option value="delivery">Domicilio</option>
+          <option value="reserva">Reserva</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="status">Estado del pedido</label>
+        <select id="status" name="status">
+          <option value="pendiente">Pendiente</option>
+          <option value="preparacion">En preparación</option>
+          <option value="entregado">Entregado</option>
+          <option value="cancelado">Cancelado</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="payment">Método de pago</label>
+        <select id="payment" name="payment">
+          <option value="efectivo">Efectivo</option>
+          <option value="tarjeta">Tarjeta</option>
+          <option value="transferencia">Transferencia</option>
+          <option value="qr">QR</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="category">Categoría de producto</label>
+        <select id="category" name="category">
+          <option value="entradas">Entradas</option>
+          <option value="plato-fuerte">Plato fuerte</option>
+          <option value="postres">Postres</option>
+          <option value="bebidas">Bebidas</option>
+        </select>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn apply">Aplicar filtros</button>
+        <button type="reset" class="btn reset">Restablecer</button>
+      </div>
+    </form>
+
+    <!-- ====  KPI CARDS  ==== -->
+    <section class="kpis" id="kpis">
+      <div class="kpi-card">
+        <h3>Total vendido</h3>
+        <p id="kpi-sales">$0</p>
+      </div>
+      <div class="kpi-card">
+        <h3>Cant. pedidos</h3>
+        <p id="kpi-orders">0</p>
+      </div>
+      <div class="kpi-card">
+        <h3>Valor promedio por pedido</h3>
+        <p id="kpi-ticket">$0</p>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
