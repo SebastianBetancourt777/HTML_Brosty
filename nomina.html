@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BROSTY</title>
+  <link rel="stylesheet" href="./css/claseCss/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+  <header class="navbar">
+    <div class="caja_logo">
+        <img src="images/logo_brosty.png" height="100px" alt="">
+    </div>
+    
+  </div> 
+      <button class="btn btn-primary m-5" type="button"
+            data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+            aria-controls="offcanvas" 
+            
+                      
+    >
+            <img class="menu-desplegable" src="images/menu-desplegable.png" width="40px" alt="">
+    </button>
+
+    <!-- off canvas menu -->
+    <div 
+        class="offcanvas offcanvas-start" tabindex="-1"
+        id="offcanvas" aria-labelledby="offcanvasLabel"   
+    >
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">
+                Menú Brosty
+            </h5>
+            <nav class="nav-links">
+                <a href="./pagina-principal.html">INICIO</a>
+                <a href="./inventario.html">INVENTARIO</a>
+                <a href="./logistica.html">LOGISTICA</a>
+                <a href="./nomina.html">NOMINA</a>
+                <a href="./gestion_personal.html">GESTION DE PERSONAL</a> 
+                <a href="./aboutUs.html">ABOUT US     </a> 
+                <a href="./index.html">CERRAR SESION</a
+            </nav>
+            
+        </div>
+    </div>
+    <!-- off canvas menu -->
+    
+</header>
+  <br>
+
+  <div class="container"> 
+    <div class="card">
+      <h5 class="card-header">Consultar Nómina por Cédula</h5>
+      <div class="card-body">
+        <form onsubmit="return false">
+          <fieldset>
+            <label for="cedula">Cédula:</label><br>
+            <input type="number" placeholder="Ingresa una cédula" class="form-control" id="cedula" min="0"><br>
+            <a href="#" class="btn btn-primary" onclick="buscarPorCedula()">Consultar</a>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+    <div id="resultado" class="mt-4" style="display: none;"></div>
+
+    <hr><br>
+    <p>Consulta la nómina de un trabajador según su cédula. Verás detalles como salario, auxilios, deducciones y más, de acuerdo a su cargo.</p>
+  </div>
+
+  <script>
+    // Simulación de empleados registrados
+    const empleados = [
+      { nombre: "Carlos Gómez", cedula: "10101010", cargo: "administrador" },
+      { nombre: "Ana Ruiz", cedula: "20202020", cargo: "cocinero" },
+      { nombre: "Luis Torres", cedula: "30303030", cargo: "mesero" },
+      { nombre: "Laura Díaz", cedula: "40404040", cargo: "domiciliario" }
+    ];
+
+    const nomina = {
+      administrador: {
+        horas: 240,
+        valorHora: 8000,
+        auxilio: 100000,
+        vacaciones: 960000,
+        salario: 1920000,
+        deducciones: 153600
+      },
+      cocinero: {
+        horas: 230,
+        valorHora: 6189,
+        auxilio: 200000,
+        vacaciones: 711750,
+        salario: 1423500,
+        deducciones: 113880
+      },
+      mesero: {
+        horas: 230,
+        valorHora: 6189,
+        auxilio: 200000,
+        vacaciones: 711750,
+        salario: 1423500,
+        deducciones: 113880
+      },
+      domiciliario: {
+        horas: 230,
+        valorHora: 6189,
+        auxilio: 200000,
+        vacaciones: 711750,
+        salario: 1423500,
+        deducciones: 113880
+      }
+    };
+
+    function buscarPorCedula() {
+      const cedula = document.getElementById("cedula").value.trim();
+      const resultado = document.getElementById("resultado");
+
+      const empleado = empleados.find(e => e.cedula === cedula);
+
+      if (!empleado) {
+        resultado.innerHTML = `<div class="alert alert-danger">Empleado con cédula ${cedula} no encontrado.</div>`;
+        resultado.style.display = "block";
+        return;
+      }
+
+      const datos = nomina[empleado.cargo];
+      const total = datos.salario + datos.auxilio + datos.vacaciones - datos.deducciones;
+
+      resultado.innerHTML = `
+        <div class="card">
+          <div class="card-header bg-success text-white">
+            Información de ${empleado.nombre} (${empleado.cargo.charAt(0).toUpperCase() + empleado.cargo.slice(1)})
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cédula: ${empleado.cedula}</li>
+            <li class="list-group-item">Horas trabajadas: ${datos.horas}</li>
+            <li class="list-group-item">Valor por hora: $${datos.valorHora.toLocaleString()}</li>
+            <li class="list-group-item">Auxilio de transporte: $${datos.auxilio.toLocaleString()}</li>
+            <li class="list-group-item">Vacaciones: $${datos.vacaciones.toLocaleString()}</li>
+            <li class="list-group-item">Salario básico: $${datos.salario.toLocaleString()}</li>
+            <li class="list-group-item text-danger">Deducciones: -$${datos.deducciones.toLocaleString()}</li>
+            <li class="list-group-item fw-bold">💰 Pago total: $${total.toLocaleString()}</li>
+          </ul>
+        </div>
+      `;
+      resultado.style.display = "block";
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body><br><br><br><br><br><br><br><br><br><br><br>
+<footer>
+     <div class="row">
+         <div class="col-sm-4">
+                <p>
+                <b><a href="pagina-principal.html">Inicio</a></b>
+                </p>
+    
+         </div>
+         <div class="col-sm-4">
+             <b><p>
+                 Informacion y contacto
+             </p></b>
+             <p>
+                 321-433-8045 (celular)
+             </p>
+             
+             <b><p>
+                 Administracion Brosty
+             </p></b>
+             <p>
+                 319-844-5439
+             </p>
+         </div>
+         <div class="col-sm-4">
+             <div id="googleMap">
+                <script>
+                    function myMap() {
+                    var mapProp= {
+                        center:new google.maps.LatLng(41.7554612,-88.3474496),
+                        zoom:18,
+                    };
+                    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                    }
+                </script>
+
+                
+                <iframe src="https://www.google.com/maps/d/embed?mid=1S8cRW8Tcik1KusyCdv_kSIVG8TnMJGI&ehbc=2E312F" ></iframe>
+        
+                </script>
+              </div>
+            </div>
+        </div> 
+</footer>
+</html>

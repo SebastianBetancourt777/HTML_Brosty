@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BROSTY <img src="/images/logo-brosty.png" alt="brosty"> </title>
+    
+    <link rel="stylesheet" href="./css/claseCss/inventario.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <header class="navbar">
+        <div class="caja_logo">
+            <img src="images/logo_brosty.png" height="100px" alt="">
+        </div>
+
+          <button class="btn btn-primary m-5" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+                aria-controls="offcanvas" 
+                
+                          
+        >
+                <img class="menu-desplegable" src="images/menu-desplegable.png" width="40px" alt="">
+        </button>
+
+        <!-- off canvas menu -->
+        <div 
+            class="offcanvas offcanvas-start" tabindex="-1"
+            id="offcanvas" aria-labelledby="offcanvasLabel"   
+        >
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title">
+                    Menú Brosty
+                </h5>
+                <nav class="nav-links">
+                    <a href="./pagina-principal.html">INICIO</a>
+                    <a href="./inventario.html">INVENTARIO</a>
+                    <a href="./logistica.html">LOGISTICA</a>
+                    <a href="./reportes.html">REPORTES</a>
+                    <a href="./nomina.html">NOMINA</a>
+                    <a href="./gestion_personal.html">GESTION DE PERSONAL</a> 
+                    <a href="./aboutUs.html">ABOUT US     </a> 
+                </nav>
+            </div>
+        </div>
+        <!-- off canvas menu -->
+        
+    </header>
+
+<form action="">
+    <h1>Inventario</h1>
+    <br>
+    <label for="Sede" style="font-size: 30px">Seleccione la sede:</label><br>
+    <select name="Sede" id="">
+        <option value="1">Sede1</option>
+        <option value="2">Sede2</option>
+        <option value="3">Sede3</option>
+        <option value="4">Sede4</option>
+    </select>
+    <br><br>
+
+    
+ <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f0f0f0;
+        }
+    </style>
+
+     <div class="contenedor-formulario">
+        <form action="#" method="post">
+            <h2>Contacto</h2>
+
+            <div class="grupo-control">
+                <label for="codigo">Código:</label>
+                <input type="text" id="codigo" name="codigo" placeholder="codigo" required>
+            </div>
+            <br>
+            <div class="grupo-control">
+                <label for="ubicacion">Ubicación:</label>
+                <input type="text" id="ubicacion" name="ubicacion" placeholder="ubicacion" required>
+            </div>
+            <br>
+            <div class="grupo-control">
+                <label for="producto">Producto:</label>
+                <input type="text" id="producto" name="producto" placeholder="producto" required>
+            </div>
+            <br>
+            <div class="grupo-control">
+                <label for="unidad">Unidad:</label>
+                <input type="text" id="unidad" name="unidad" placeholder="unidad" required>
+            </div>
+            <br>
+            <div class="grupo-control">
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" name="cantidad" placeholder="cantidad" required>
+            </div>
+            <br>
+            <div class="grupo-control">
+                <label for="costoUnidad">Costo por unidad:</label>
+                <input type="number" id="costoUnidad" name="costoUnidad" placeholder="costoUnidad" required>
+            </div>
+            <br>
+            <button type="button" id="agregar" onclick="agregarProducto()">Agregar</button>
+        </form>
+    </div>
+
+  
+
+    <table id="inventario">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Ubicación</th>
+                <th>Producto</th>
+                <th>Unidad</th>
+                <th>Cantidad</th>
+                <th>Costo por unidad (COP)</th>
+                <th>Valor inventario (COP)</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+
+    <script>
+        let productos = [];
+        const tbody = document.getElementById('tbody');
+
+        function agregarProducto() {
+            const codigo = document.getElementById('codigo').value;
+            const ubicacion = document.getElementById('ubicacion').value;
+            const producto = document.getElementById('producto').value;
+            const unidad = document.getElementById('unidad').value;
+            const cantidad = parseInt(document.getElementById('cantidad').value);
+            const costoUnidad = parseFloat(document.getElementById('costoUnidad').value);
+
+            if (codigo && ubicacion && producto && unidad && cantidad && costoUnidad) {
+                const valorInventario = cantidad * costoUnidad;
+                const productoObj = {
+                    codigo,
+                    ubicacion,
+                    producto,
+                    unidad,
+                    cantidad,
+                    costoUnidad,
+                    valorInventario
+                };
+                productos.push(productoObj);
+                mostrarProductos();
+                document.getElementById('formulario').reset();
+            } else {
+                alert("Por favor, complete todos los campos");
+            }
+        }
+
+        function mostrarProductos() {
+            tbody.innerHTML = '';
+            productos.forEach((producto, index) => {
+                const fila = document.createElement('tr');
+                fila.innerHTML = `
+                    <td>${producto.codigo}</td>
+                    <td>${producto.ubicacion}</td>
+                    <td>${producto.producto}</td>
+                    <td>${producto.unidad}</td>
+                    <td>${producto.cantidad}</td>
+                    <td>${producto.costoUnidad.toLocaleString()}</td>
+                    <td>${producto.valorInventario.toLocaleString()}</td>
+                    <td><button class="eliminar" onclick="eliminarProducto(${index})">Eliminar</button></td>
+                `;
+                tbody.appendChild(fila);
+            });
+        }
+
+        function eliminarProducto(index) {
+            productos.splice(index, 1);
+            mostrarProductos();
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

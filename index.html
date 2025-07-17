@@ -1,0 +1,42 @@
+
+      <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BROSTY <img src="/images/logo-brosty.png" alt="brosty"> </title>
+    <link rel="stylesheet" href="./css/claseCss/style.css">
+    
+</head>
+<body>  
+    <header class="navbar">
+        <div class="caja_logo">
+            <img src="images/logo_brosty.png" height="200px" alt="">
+        </div> 
+        
+        <div class="inicio-sesion" >
+            <h1>Bienvenido a BROSTY</h1>
+            <p>Gestión inteligente de inventario, logística y personal.</p>
+        </div> 
+    </header>
+    <div class="form-container"><img src="images/logo_brosty.png"  height="80px" id="img-login"><br>
+        <h2 id="iniciatudia">INICIA TU DIA CON BROSTY </h2>
+        <form  onsubmit=" return validarsesion()">
+            <label for="usuario">usuario: </label>
+            <select id="usuario" name="rol">
+                <option value="admin">Administrador</option>
+                <option value="mesero">Empleados</option>
+                
+</select>
+            <label for="contraseña">contraseña: </label>
+            <input type="password" id="contraseña" name="contraseña" required><br><br>
+            <button type="submit">ingresar a Brosty Colombia</button>
+        </form><br>
+    </div>
+    <script src="script.js"></script>
+    </body>
+
+    <footer>
+         
+    </footer>
+    </html>

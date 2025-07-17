@@ -1,0 +1,72 @@
+#layout {
+
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    width: 80%; 
+    height: 380px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: translateX(170px);
+}
+
+#mapa {
+    width: 60%;
+    height: 100%;
+    background-color: #ddd;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+#formContainer {
+    width: 40%;
+    padding: 20px;
+    border: 1px solid #000;
+    text-align: center;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; 
+    gap: 10px; 
+    margin-top: 15px; 
+}
+
+#confirmacion button {
+    padding: 5px 10px;
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+    width: 100%;
+}
+
+input, select, textarea, button {
+    display: block;
+    margin: 5px auto;
+    width: 80%;
+    padding: 5px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.btn{
+    width: 6%;
+    align-items: center;
+}

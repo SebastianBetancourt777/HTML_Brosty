@@ -1,0 +1,96 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+ body {
+    background-image: url("/images/brosty-stencil.png");
+    background-color:rgb(248, 248, 241);
+    background-size: contain;
+ }
+
+  .navbar {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    background-color: rgb(140, 198, 63);
+    width: 100%
+  }
+  
+  .nav-links {
+    display: grid; 
+    gap: 35px;
+    margin-left: 3%;
+  }
+  
+  .nav-links a {
+    color: rgb(50, 50, 50); 
+    font-weight: bold; 
+    letter-spacing: 2px; 
+    transition: color 0.2s; 
+    text-decoration: none;  
+  }
+ 
+  .caja_logo{
+    box-shadow: 3px 3px 3px 3px rgb(120, 116, 116);
+    margin-left: 1%;    
+  }
+
+ .welcome-text :hover{
+  color: rgb(250, 245, 245);
+ }
+ 
+ .cards-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea en pantallas pequeñas */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    gap: 2rem; /* Espacio entre las tarjetas */
+    margin-top: 2rem; /* Espacio superior */
+    max-width: 95%;
+    border-radius: 15px;
+}
+
+.card {
+    width: 450px; /* Ancho fijo para cada tarjeta */
+    height: 460px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    cursor: pointer;
+    border-radius: 15px; /* Bordes redondos para la tarjeta */
+}
+
+.card:hover {
+    transform: rotateY(180deg); /* Rotación al pasar el ratón */
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.back {
+    background-color: #ffffff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transform: rotateY(180deg);
+}
+
+

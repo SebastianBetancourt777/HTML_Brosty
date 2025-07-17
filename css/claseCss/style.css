@@ -1,0 +1,232 @@
+/* clase*/
+/* voy a la etiqueta en html le pongo class y lo nombro */
+/* despues el llamado es . + el nombre */
+
+
+/* ID a diferencia del clase empieza con #  */
+*{
+  box-sizing: border-box;
+}
+ body {
+    background-image: url("/images/brosty-stencil.png");
+    background-color:rgb(248, 248, 241);
+    background-size: contain;
+    
+ }
+
+ /* Elimina los márgenes por defecto del navegador y define la fuente principal */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Estiliza la barra de navegación principal */
+  .navbar {
+    display: flex; /* Usa Flexbox para alinear elementos horizontalmente */
+    justify-content: flex-start; /* Deja espacio entre el logo y los enlaces */
+    align-items: center; /* Centra verticalmente los elementos */
+    background-color: rgb(140, 198, 63);
+    width: 100%
+  }
+  
+  
+  /* Contenedor de los enlaces del menú de navegación */
+  .nav-links {
+    display: grid; /* Muestra los enlaces uno al lado del otro */
+    gap: 35px; /* Espacio entre cada enlace */
+    margin-left: 3%;
+  }
+  
+  /* Estilo individual de los enlaces */
+  .nav-links a {
+    color: rgb(50, 50, 50); /* Color del texto */
+    font-weight: bold; /* Hace el texto más grueso */
+    letter-spacing: 2px; /* Espaciado entre letras para dar un look moderno */
+    transition: color 0.2s; /* Suaviza el cambio de color al pasar el mouse */
+    text-decoration: none;
+    
+  }
+
+  
+  /* Cambio de color cuando el usuario pasa el mouse sobre el enlace */
+  .nav-links a:hover {
+    color: #f40909de; 
+    
+  }
+
+  .nav-links a:active{
+    color: green;
+  }
+
+  .formulario {
+    background-color: rgb(235, 229, 229);
+    box-shadow: 5px 5px 5px 5px rgb(245, 5, 5);
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
+  .caja_logo{
+    box-shadow: 3px 3px 3px 3px rgb(120, 116, 116);
+    margin-left: 1%;
+    
+  }
+
+  #Blateral{
+    min-width: 500px;
+    max-height: 650px;
+    overflow: hidden;
+    width: 10%;
+    float: right;
+    overflow-y: scroll;
+    border: 1px solid blue;
+  }
+
+  .libre{
+    position: fixed;
+    top:0px;
+    left: 450px;
+    border: 1px solid black;
+    background-color: red;
+    color: white;
+    width: 80px;
+    height: 80px;
+    font-size: 13px;
+  }
+ .welcome-text{
+  background-color: rgb(140, 198, 63);
+  width: 90%;
+  text-align: center;
+ }
+
+ .welcome-text :hover{
+  color: rgb(250, 245, 245);
+ }
+ .contenedor-principal {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px;
+  background-color: var(--bg-main); /* Usa tu color de fondo */
+}
+
+.tarjeta {
+  width: 200px;
+  text-align: center;
+  margin: 20px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.tarjeta img {
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  cursor: pointer;
+  
+}
+
+.tarjeta h3 {
+  margin-top: 10px;
+  color: rgb(50, 50, 50); /* Texto sobrio */
+  font-weight: 600;
+}
+
+.form-container {
+  background: rgb(201, 196, 196);
+  text-align: center;
+  border-radius: 5%;
+  width: 50%;
+  margin-left: 25%;
+  margin-top:7%;
+  margin-bottom: 0%;
+  box-shadow:10px 10px 10px 10px rgb(143, 137, 137) ;
+ padding: 15px;
+ justify-content: center;
+}
+
+.inicio-sesion{
+  text-align: center;
+  margin-right: 30%;
+}
+
+#iniciatudia{
+  transition: transform 0.3s ease;
+  font-family: monospace;
+  width: 60%;
+  margin-left: 25%
+  
+}
+
+#img-login{
+  margin-left: 80%;
+}
+
+.form-container:hover #img-login{
+  transform: scale(3.1); /* Aumenta el tamaño al 110% al pasar el mouse */
+}
+
+.btn-primary {
+  background-color:rgb(245, 237, 237) !important;  /* rojo-naranja */
+  border-color: #f6f5f4 !important;
+  margin-right: 80%;
+}
+
+.formulario{
+  background-image: url("/images/brosty-stencil.png");
+  
+}
+
+footer {
+	font-size: .9em;
+	padding-bottom: 5px;
+	border-top: 3px solid rgb(140, 198, 63);;
+	background:linear-gradient(#f2f2f2, #e6e6e6);
+	color: #333;
+	padding: 15px;
+  width: 100%;;
+  
+  }
+  footer a {
+      color: #333;
+  }
+  footer a:hover {
+      color: #48a948;
+      text-decoration: none;
+  }  
+  #googleMap {
+      width:100%;
+      height: 1%;
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(100%);
+}
+
+#tabla-empleados{
+  background-color: rgb(235, 229, 229);
+    box-shadow: 5px 5px 5px 5px rgb(140, 198, 63);
+    margin-left: 25%;
+    margin-right: 25%;
+    
+}
+
+h2{
+  background-color: rgb(235, 229, 229);
+    box-shadow: 5px 5px 5px 5px rgb(245, 5, 5);
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+
+
+
+
+  
+
