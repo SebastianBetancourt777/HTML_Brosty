@@ -8,6 +8,13 @@
     background-image: url("/images/brosty-stencil.png");
     background-color:rgb(248, 248, 241);
     background-size: contain;
+    text-align: center;
+ }
+
+ .btn-primary{
+  background-color: rgb(245, 237, 237) !important;
+  border-color: #f6f5f4 !important;
+  margin-right: 5%;
  }
 
   .navbar {

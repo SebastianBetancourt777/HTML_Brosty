@@ -16,7 +16,7 @@ body {
 
 /* Header y navbar */
 .navbar {
-    background: linear-gradient(90deg, #228b22, #FFFFE0);
+    background: linear-gradient(90deg, rgb(140, 198, 63));
     padding: 1rem 2rem;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     display: flex;
@@ -30,13 +30,9 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(45deg, #228b22, #f5cd2e);
-    border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
-    transition: all 0.3s ease;
+    background-color: rgb(245, 237, 237) !important;
+    border-color: #f6f5f4 !important;
+    margin-right: 80%;
 }
 
 .btn-primary:hover {
@@ -44,39 +40,24 @@ body {
     box-shadow: 0 6px 20px rgba(255, 107, 107, 0.5);
 }
 
-/* Offcanvas menu */
-.offcanvas {
-    background: linear-gradient(180deg, #90EE90, #FFFFE0);
-    font-family: 'Courier New', Courier, monospace;
-}
-
-.offcanvas-title {
-    color: #dc2626;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-}
 
 .nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 2rem;
-}
+    display: grid; /* Muestra los enlaces uno al lado del otro */
+    gap: 35px; /* Espacio entre cada enlace */
+    margin-left: 3%;
+  }
 
-.nav-links a {
-    color: #333;
+
+  .nav-links a {
+    color: rgb(50, 50, 50); /* Color del texto */
+    font-weight: bold; /* Hace el texto más grueso */
+    letter-spacing: 2px; /* Espaciado entre letras para dar un look moderno */
+    transition: color 0.2s; /* Suaviza el cambio de color al pasar el mouse */
     text-decoration: none;
-    padding: 0.8rem 1rem;
-    border-radius: 8px;
-    background: rgba(255, 255, 224, 0.7);
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-    font-weight: bold;
-}
+  }
 
 .nav-links a:hover {
-    background: #FF6B6B;
-    color: white;
+    color: rgb(248, 32, 32);
     border-color: #FFD93D;
     transform: translateX(10px);
 }
@@ -105,7 +86,7 @@ label[for="Sede"] {
 }
 
 select[name="Sede"] {
-    background: linear-gradient(45deg, #90EE90, #FFFFE0);
+    background: linear-gradient(45deg, rgb(140, 198, 63));
     border: 2px solid #331900;
     padding: 0.8rem;
     font-size: 1.2rem;
@@ -211,7 +192,7 @@ table {
 }
 
 th {
-    background: linear-gradient(45deg, #FFF5C7, #228b22);
+    background: linear-gradient(45deg, rgb(140, 198, 63));
     color: white;
     padding: 1rem;
     text-align: center;
@@ -321,10 +302,10 @@ table {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, #90EE90, #FF6B6B);
+    background: linear-gradient(45deg, rgb(140, 198, 63));
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(45deg, #FF6B6B, #FFD93D);
+    background: linear-gradient(45deg, #FF6B6B);
 }
